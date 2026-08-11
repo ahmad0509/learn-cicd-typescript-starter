@@ -19,8 +19,9 @@ describe("getAPIKey", () => {
   });
 
   test("returns the api key when header uses ApiKey scheme", () => {
-    const headers: IncomingHttpHeaders = { authorization: "ApiKey my-secret-key" };
+    const headers: IncomingHttpHeaders = {
+      authorization: "ApiKey my-secret-key",
+    };
     expect(getAPIKey(headers)).toBe("my-secret-key");
   });
 });
-
